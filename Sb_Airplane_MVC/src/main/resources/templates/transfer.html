@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<table th:if="${captainListDto != null}">
+			<tr>
+				<th>Name</th>
+			</tr>
+			<tr th:each="captainDto : ${captainListDto.getCaptainDtoList()}">
+				<td th:text="${captainDto.getName()} + ' got home with transfer.'"></td>
+				
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<table th:if="${captainListDto != null}">
+			<tr>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr th:each="captainDto : ${captainListDto.getCaptainDtoList()}">
+				<td th:text="${captainDto.getName()}"></td>
+				<td th:text="${captainDto.getFlightTime()} + ' minutes.'"></td>
+			</tr>
+		</table>
+	</body>
+</html>

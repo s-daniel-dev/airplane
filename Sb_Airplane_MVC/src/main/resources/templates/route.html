@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<table th:each=" flightDtoList : ${routeDto.getListOfLists()}">
+			<tr>
+				<th>Departure Country</th>
+				<th>Departure Time</th>
+				<th>Arrive Country</th>
+				<th>Arrive Time</th>
+				<th>Flight Number</th>
+				<th>Captain</th>
+				<th>Flight Time</th>
+				<th>Waiting Time</th>
+			</tr>
+			<tr th:each=" flightDto : ${flightDtoList}">
+				<td th:text="${flightDto.getDepCountry()}"></td>
+				<td th:text="${flightDto.getDepTime()}"></td>
+				<td th:text="${flightDto.getArrCountry()}"></td>
+				<td th:text="${flightDto.getArrTime()}"></td>
+				<td th:text="${flightDto.getFlightNumber()}"></td>
+				<td th:text="${flightDto.getCaptain()}"></td>
+				<td th:text="${flightDto.getFlightTime()}"></td>
+				<td th:if="${flightDto.getWaitingTime() != null}" th:text="${flightDto.getWaitingTime()} + ' minutes'"></td>
+			</tr>
+		</table>
+	</body>
+</html>
