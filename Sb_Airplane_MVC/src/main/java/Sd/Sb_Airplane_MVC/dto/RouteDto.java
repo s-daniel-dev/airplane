@@ -49,14 +49,12 @@ public class RouteDto {
 						
 					}
 					makeARoute(to, index, newRouteList, list);
-					break;
 				}
 				else {
 					makeARoute(to, index, routeList, list);
-					break;
 				}
 				
-			
+				break;
 				
 			}
 			
